@@ -17,7 +17,3 @@ Ambassadeurs.
 - SCRUM
 - SASS
 - PHPSTORM
-
-![home](https://ibb.co/vZmBfC7)
-
-![trombinoscope](/home/vador/Projects/Symfony/Pro/loireetorleans/img/section_trombinoscope.png)
