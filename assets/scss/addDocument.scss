@@ -1,0 +1,21 @@
+@import "app";
+
+form {
+    & > div {
+        background-color: $light-color;
+        border: 1px solid $widget-color;
+    }
+}
+
+label {
+    font-family: $font-text;
+}
+
+@media screen and (min-width: 768px){
+    section {
+        min-height: 80vh;
+    }
+}
+
+@import "~bootstrap/scss/bootstrap";
+

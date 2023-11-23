@@ -1,0 +1,28 @@
+@import "vars";
+
+h1 {
+    font-family: $font-title;
+    font-size: $size-title;
+}
+
+p {
+    font-family: $font-text;
+}
+
+figcaption {
+    font-family: $font-text;
+}
+
+blockquote{
+    font-size: $size-quote;
+}
+
+h2 {
+    font-family: $font-title;
+}
+
+h3 {
+    font-family: $font-title;
+}
+
+@import "~bootstrap/scss/bootstrap";

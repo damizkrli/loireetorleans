@@ -1,0 +1,16 @@
+@import "vars";
+
+.profil
+{
+    border: 1px solid $widget-color;
+}
+
+@media screen and (min-width: 768px){
+    section {
+        min-height: 80vh;
+    }
+}
+
+label {
+    font-family: $font-text;
+}

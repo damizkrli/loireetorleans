@@ -1,0 +1,170 @@
+<?php //App__Entity__Conversation__CLASSMETADATA__
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Conversation',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Conversation',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\ConversationRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => null,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'id' => true,
+                        'columnName' => 'id',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'conversation',
+                ],
+            ],
+            'associationMappings' => [
+                [
+                    'document' => [
+                        'fieldName' => 'document',
+                        'joinColumns' => [
+                            [
+                                'name' => 'document_id',
+                                'unique' => false,
+                                'nullable' => false,
+                                'onDelete' => null,
+                                'columnDefinition' => null,
+                                'referencedColumnName' => 'id',
+                            ],
+                        ],
+                        'cascade' => [],
+                        'inversedBy' => 'conversations',
+                        'targetEntity' => 'App\\Entity\\Document',
+                        'fetch' => 2,
+                        'type' => 2,
+                        'mappedBy' => null,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Conversation',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'sourceToTargetKeyColumns' => [
+                            'document_id' => 'id',
+                        ],
+                        'joinColumnFieldNames' => [
+                            'document_id' => 'document_id',
+                        ],
+                        'targetToSourceKeyColumns' => [
+                            'id' => 'document_id',
+                        ],
+                        'orphanRemoval' => false,
+                    ],
+                    'users' => [
+                        'fieldName' => 'users',
+                        'joinTable' => [
+                            'name' => 'conversation_user',
+                            'joinColumns' => [
+                                [
+                                    'name' => 'conversation_id',
+                                    'referencedColumnName' => 'id',
+                                    'onDelete' => 'CASCADE',
+                                ],
+                            ],
+                            'inverseJoinColumns' => [
+                                [
+                                    'name' => 'user_id',
+                                    'referencedColumnName' => 'id',
+                                    'onDelete' => 'CASCADE',
+                                ],
+                            ],
+                        ],
+                        'targetEntity' => 'App\\Entity\\User',
+                        'mappedBy' => null,
+                        'inversedBy' => 'conversations',
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 8,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Conversation',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'joinTableColumns' => [
+                            'conversation_id',
+                            'user_id',
+                        ],
+                        'isOnDeleteCascade' => true,
+                        'relationToSourceKeyColumns' => [
+                            'conversation_id' => 'id',
+                        ],
+                        'relationToTargetKeyColumns' => [
+                            'user_id' => 'id',
+                        ],
+                    ],
+                    'messages' => [
+                        'fieldName' => 'messages',
+                        'mappedBy' => 'conversation',
+                        'targetEntity' => 'App\\Entity\\Message',
+                        'cascade' => [],
+                        'orphanRemoval' => true,
+                        'fetch' => 2,
+                        'type' => 4,
+                        'inversedBy' => null,
+                        'isOwningSide' => false,
+                        'sourceEntity' => 'App\\Entity\\Conversation',
+                        'isCascadeRemove' => true,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                    ],
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

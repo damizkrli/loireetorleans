@@ -1,0 +1,26 @@
+@import "app";
+
+td , p {
+    font-family: $font-text;
+}
+
+th {
+    font-family: $font-title;
+}
+
+form {
+    & > div {
+        background-color: $light-color;
+        border: 1px solid $widget-color;
+        margin-bottom: 15px;
+    }
+}
+
+label {
+    font-family: $font-text;
+}
+
+.card-body {
+    background-color: $widget-light-color;
+    border-radius: 3px;
+}

@@ -1,0 +1,134 @@
+@import "vars";
+
+
+.footer {
+    font-family: $font-text;
+    background-color: $widget-color;
+    display: table-row;
+
+    & h5 {
+        font-size: $size-footer-text;
+    }
+
+    & p {
+        font-family: $font-text;
+        font-size: $size-footer-text;
+    }
+
+    & > .row {
+        margin-top: auto;
+        bottom: 0;
+    }
+
+    & a, h6 {
+        color: $nav-bar;
+
+        &:hover {
+            text-decoration: none;
+            outline: none;
+            color: lighten($nav-bar, 30%);
+        }
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $light-color;
+    display: table;
+    width: 100%;
+
+    & section {
+        min-height: 80vh;
+        max-width: 100vw;
+    }
+}
+
+section {
+    min-height: 80vh;
+}
+
+h1 {
+    font-family: $font-title;
+    font-size: $size-title;
+}
+
+.navbar {
+    background-color: $nav-bar;
+    font-family: $font-title;
+
+    & a {
+        font-size: $size-navbar-text;
+
+    }
+
+    & .dropdown-menu {
+
+        background-color: $nav-bar;
+
+        & .dropdown-item {
+
+            color: darken($link-light, 30%);
+
+            &:hover {
+                color: $link-light;
+                background-color: inherit;
+            }
+        }
+    }
+
+}
+
+.infobulle {
+    position: relative; /* les .infobulle deviennent référents */
+    cursor: help;
+}
+
+/* on génère un élément :after lors du survol et du focus :*/
+
+.infobulle:hover::after,
+.infobulle:focus::after {
+    content: attr(aria-label); /* on affiche aria-label */
+    position: absolute;
+    top: -2.4em;
+    left: 50%;
+    transform: translateX(-50%); /* on centre horizontalement */
+    z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
+    white-space: nowrap; /* on interdit le retour à la ligne */
+}
+
+.blur {
+    box-shadow: 2px 3px 5px 1px $nav-bar;
+}
+
+.confirmation {
+    background-color: $widget-light-color;
+    border-radius: 3px;
+}
+
+.validation {
+    background-color: $widget-light-color;
+    border-radius: 3px;
+}
+
+.alert-danger {
+    > ul {
+        padding: 0 1%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .pagination .page-item {
+        display: none;
+    }
+
+    .pagination .page-item:first-child, .pagination .page-item:last-child {
+        display: block;
+    }
+}
+
+@import "~bootstrap/scss/bootstrap";

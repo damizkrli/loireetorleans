@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %}{% endblock %}</title>
+    {{ encore_entry_link_tags('app') }}
+
+    {% block stylesheets %}
+
+    {% endblock %}
+    <link rel="icon" href="{{ asset('build/logo4.png') }}" />
+</head>
+
+<body>
+{% include '_navbar.html.twig' %}
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="flash alert alert-{{ label }} position-absolute col-12">
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+{% block body %}
+{% endblock %}
+{% include '_footer.html.twig' %}
+{{ encore_entry_script_tags('app') }}
+{% block javascripts %}
+{% endblock %}
+</body>
+
+</html>

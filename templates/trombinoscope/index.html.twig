@@ -1,0 +1,63 @@
+{% extends '_layout.html.twig' %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+    {{ encore_entry_link_tags('trombi') }}
+{% endblock %}
+
+
+
+{% block title %}
+    Loire&Orléans | Trombinoscope
+{% endblock %}
+
+
+{% block body %}
+    <section class="d-flex flex-column justify-content-center align-items-center">
+
+        <h1 class="text-center my-4">Trombinoscope</h1>
+
+        <div class="d-flex flex-column col-12">
+            <div class="d-flex justify-content-center my-4">
+                <div class="form-group">
+                    <div class="d-flex justify-content-center my-4">
+                        <span class="infobulle"
+                              aria-label="Veuillez saisir un nom, un prénom, une entreprise, un bassin d'activité ou un mot clé.">
+                            {{ form_start(form, {'attr': {'class': 'form-inline my-2 my-lg-0 justify-content-center'}}) }}
+                            {{ form_widget(form.search, {'attr': {'class': 'form-control mr-sm-2 col-md-7', 'placeholder': "Marc, Pichon, SARL ..."}}) }}
+                            <button class="btn btn-primary my-2 my-sm-0 mt-4" type="submit">Rechercher</button>
+                        {{ form_end(form) }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row p-0 m-0 justify-content-center w-100">
+                {% for user in users %}
+                    <div class="trombi card my-4 mx-lg-5 col-md-5 col-lg-2 m-2 p-0">
+                        <img class="card-img-top"
+                             src="{% if user.picture is empty %}{{ asset('build/img_profil_trombinoscope.png') }}{% else %}{{ vich_uploader_asset(user, 'pictureFile', 'App\\Entity\\User') }}{% endif %}"
+                             alt="Photo Ambassadeur">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ user.firstname }} {{ user.lastname }}</h3>
+                            <p class="card-title ">
+                                <i class="far fa-building"></i>
+                                {{ user.company }}
+                            </p>
+                            <p><small><i><b>Centres d'intêrets :</b> {{ user.description }}</i></small></p>
+                        </div>
+                        <a href="{{ path('user_show', {'login': user.login}) }}" class="btn btn-info mt-2 rounded-0">En savoir
+                            +</a>
+                    </div>
+                {% else %}
+                    Aucun Ambassadeur trouvé
+                {% endfor %}
+            </div>
+        </div>
+        <div class="d-flex justify-content-center w-100 my-5">
+            {{ knp_pagination_render(users) }}
+        </div>
+    </section>
+
+
+
+{% endblock %}

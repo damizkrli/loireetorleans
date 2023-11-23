@@ -1,0 +1,78 @@
+{% extends '_layoutAdmin.html.twig' %}
+
+{% block title %}Loire&Orléans | Administrateur | Gestion des profils Ambassadeurs{% endblock %}
+ {% block stylesheets %}
+     {{ encore_entry_link_tags('adminProfil') }}
+ {% endblock %}
+{% block body %}
+    <section class="d-md-flex align-items-center mb-5">
+        <div class="form w-100">
+            <h1 class="my-4 text-center">Profils des Ambassadeurs</h1>
+
+            <h3 class="my-4 text-center">Profils en attente de validation</h3>
+            <table class="table table-hover col-10 p-0 mx-auto">
+                <thead class="bg-primary">
+                <tr class="text-center text-light">
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prénom</th>
+                    <th scope="col">Entreprise</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for waiting in waitings %}
+                        <tr class="text-center">
+                            <td>{{ waiting.firstname }}</td>
+                            <td>{{ waiting.lastname }}</td>
+                            <td>{{ waiting.company }}</td>
+                            <td><a class="btn btn-info" href="{{ path('admin_profile_show', {login: waiting.login}) }}">Consulter</a></td>
+                        </tr>
+
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center w-100 my-5">
+                {{ knp_pagination_render(waitings) }}
+            </div>
+
+            <h3 class="my-4 text-center">Profils Validés</h3>
+            <div class="d-flex justify-content-center my-4">
+                <div class="form-group">
+                    <div class="d-flex justify-content-center my-4">
+                        {{ form_start(form, {'attr': {'class': 'form-inline my-2 my-lg-0 justify-content-center'}}) }}
+                        {{ form_widget(form.search, {'attr': {'class': 'form-control mr-sm-2 col-md-7', 'placeholder': "Marc, Pichon, SARL ..."}}) }}
+                        <button class="btn btn-primary my-2 my-sm-0 mt-4" type="submit">Rechercher</button>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+            <table class="table table-hover col-10 p-0 mx-auto">
+                <thead class="bg-primary">
+                <tr class="text-center text-light">
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prénom</th>
+                    <th scope="col">Entreprise</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for validate in validates %}
+                        <tr class="text-center">
+                            <td>{{ validate.firstname }}</td>
+                            <td>{{ validate.lastname }}</td>
+                            <td>{{ validate.company }}</td>
+                            <td><a class="btn btn-info" href="{{ path('admin_profile_show', {login: validate.login}) }}">Consulter</a></td>
+                        </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center w-100 my-5">
+                {{ knp_pagination_render(validates) }}
+            </div>
+            <div class="d-flex align-items-center my-4 flex-column">
+                <a class="btn btn-lg btn-primary mt-3" href="{{ path('admin_index') }}">Retour gestion</a>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

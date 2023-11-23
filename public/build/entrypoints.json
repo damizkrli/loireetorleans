@@ -1,0 +1,89 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/build/runtime.2ac11785.js",
+        "/build/934.9ddc90ef.js",
+        "/build/app.49a9e83e.js"
+      ],
+      "css": [
+        "/build/934.7fc1b24c.css",
+        "/build/app.83a34528.css"
+      ]
+    },
+    "login": {
+      "js": [
+        "/build/runtime.2ac11785.js",
+        "/build/login.4a7681dc.js"
+      ],
+      "css": [
+        "/build/login.9c263321.css"
+      ]
+    },
+    "home": {
+      "js": [
+        "/build/runtime.2ac11785.js",
+        "/build/home.bd9627e1.js"
+      ],
+      "css": [
+        "/build/home.cf6d01ca.css"
+      ]
+    },
+    "profil": {
+      "js": [
+        "/build/runtime.2ac11785.js"
+      ],
+      "css": [
+        "/build/profil.a93ca7f7.css"
+      ]
+    },
+    "addDocument": {
+      "js": [
+        "/build/runtime.2ac11785.js"
+      ],
+      "css": [
+        "/build/addDocument.202232d3.css"
+      ]
+    },
+    "adminProfil": {
+      "js": [
+        "/build/runtime.2ac11785.js"
+      ],
+      "css": [
+        "/build/adminProfil.8ab8409b.css"
+      ]
+    },
+    "register": {
+      "js": [
+        "/build/runtime.2ac11785.js"
+      ],
+      "css": [
+        "/build/register.4b300f8d.css"
+      ]
+    },
+    "addComment": {
+      "js": [
+        "/build/runtime.2ac11785.js"
+      ],
+      "css": [
+        "/build/addComment.db51b834.css"
+      ]
+    },
+    "document": {
+      "js": [
+        "/build/runtime.2ac11785.js"
+      ],
+      "css": [
+        "/build/document.7e0d5bd1.css"
+      ]
+    },
+    "trombi": {
+      "js": [
+        "/build/runtime.2ac11785.js"
+      ],
+      "css": [
+        "/build/trombi.e84b65c0.css"
+      ]
+    }
+  }
+}
