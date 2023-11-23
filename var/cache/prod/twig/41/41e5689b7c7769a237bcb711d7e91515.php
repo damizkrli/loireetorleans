@@ -200,6 +200,6 @@ class __TwigTemplate_cad1060372160a24dd9712263bcd7d96 extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "home/index.html.twig", "/home/vador/Projects/Symfony/Pro/orleans-php-2003-project-loireetorleans/templates/home/index.html.twig");
+        return new Source("", "home/index.html.twig", "/home/vador/Projects/Symfony/Pro/loireetorleans/templates/home/index.html.twig");
     }
 }

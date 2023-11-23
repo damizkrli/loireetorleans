@@ -228,6 +228,6 @@ class __TwigTemplate_1d0e5c9f626e53ba0766d3ab40bd1930 extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "_navbar.html.twig", "/home/vador/Projects/Symfony/Pro/orleans-php-2003-project-loireetorleans/templates/_navbar.html.twig");
+        return new Source("", "_navbar.html.twig", "/home/vador/Projects/Symfony/Pro/loireetorleans/templates/_navbar.html.twig");
     }
 }

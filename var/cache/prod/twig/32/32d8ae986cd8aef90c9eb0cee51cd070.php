@@ -103,6 +103,6 @@ class __TwigTemplate_4f52eaa7b02bf9e3c41e62ab643fd28d extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "_layout.html.twig", "/home/vador/Projects/Symfony/Pro/orleans-php-2003-project-loireetorleans/templates/_layout.html.twig");
+        return new Source("", "_layout.html.twig", "/home/vador/Projects/Symfony/Pro/loireetorleans/templates/_layout.html.twig");
     }
 }
